@@ -1,0 +1,12 @@
+<h1>Welcomo to King's landing, please select your house</h1>
+
+<select class="block col-12 field"  onchange={{action (mut currentUser.house) value="target.value"}}>
+  <option value="" selected disabled>Select One</option>
+  <option value="Lannister">Lannister</option>
+  <option value="Targaryen">Targaryens</option>
+  <option value="Other">Other</option>
+</select>
+
+{{#if currentUser.house}}
+  <p>You are {{currentUser.house}}, click around.</p>
+{{/if}}

@@ -1,3 +1,22 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+<div class="flex flex-column" style="min-height:60vh">
+  <header class="p2 border">
+    <h1 class="h2 m0">Ember Route Constraints</h1>
+    {{ember-notify}}
+  </header>
+  <div class="flex-auto sm-flex">
+    <nav class="flex-first border">
+      <ul class="list-reset mt2 mb2">
+        <li>{{link-to "Introduction" "index"  class="btn block"}}</li>
+        <li>{{link-to "Installing" "install"  class="btn block"}}</li>
+        <li>{{link-to "Constraints Map" "constraints"  class="btn block"}}</li>
+        <li>{{link-to "Demo" "demo"  class="btn block"}}</li>
+        <li>{{link-to "Lannisters" "lannisters"  class="btn block"}}</li>
+        <li>{{link-to "Targaryens" "targaryens" class="btn block"}}</li>
+        <li>{{link-to "Royal Families" "royal-families" class="btn block"}}</li>
+      </ul>
+    </nav>
+    <main class="flex-auto p2">
+      {{outlet}}
+    </main>
+  </div>
+</div>

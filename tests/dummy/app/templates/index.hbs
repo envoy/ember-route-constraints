@@ -1,0 +1,24 @@
+<p>Route navigation constraints for Ember applications.</p>
+
+<p>Sometimes we want to restrict who can visit a route based on some
+conditions. A common approach to solve this issue is to have a
+<code>beforeModel</code> hook and then transtion from there if the user can't
+visit the route.</p>
+
+{{code-snippet name="before-model.js"}}
+
+<p>While this approach works, it starts to get messy, repetitive and
+difficult to follow as applications grow.</p>
+
+<p>This addon follows a similar pattern to <code>liquid-fire</code> so
+you can define all your routes constraints using a declaritive DSL. If
+the given conditions are not met, then you can redirect users to a
+different route.</p>
+
+{{code-snippet name="route-constraints.js"}}
+
+
+<p>And then add the <code>ConstrainableMixin</code> to the routes you want to constraint.</p>
+
+
+{{code-snippet name="route.js"}}
