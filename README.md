@@ -1,5 +1,7 @@
 # Ember Rute Constraints
 
+#### [Visit project page and demo](http://envoy.github.io/ember-route-constraints/)
+
 Route navigation constraints for Ember apps.
 
 Sometimes we want to restrict who can visit a route based on some
