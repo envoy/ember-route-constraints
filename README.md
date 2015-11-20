@@ -33,7 +33,7 @@ Create a file in `app/route-constraints.js` like:
 export default function() {
   this.transition(
     this.toRoute('admin'),
-    this.condition(function() {
+    this.check(function() {
       return this.get('currentUser.isAdmin');
     }),
     this.transtionTo('index')
@@ -41,7 +41,7 @@ export default function() {
 
   this.transition(
     this.toRoute(['paid-feature', 'help']),
-    this.condition(function() {
+    this.check(function() {
       return this.get('currentUser.isSubscribed');
     }),
     this.transtionTo('subscribe')
