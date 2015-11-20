@@ -36,7 +36,7 @@ export default function() {
     this.check(function() {
       return this.get('currentUser.isAdmin');
     }),
-    this.transtionTo('index')
+    this.redirectTo('index')
   );
 
   this.transition(
@@ -44,7 +44,7 @@ export default function() {
     this.check(function() {
       return this.get('currentUser.isSubscribed');
     }),
-    this.transtionTo('subscribe')
+    this.redirectTo('subscribe')
   );
 }
 ```
