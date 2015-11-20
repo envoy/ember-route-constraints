@@ -40,7 +40,10 @@
     "ember-try": "~0.0.8"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-authorization",
+    "authorization",
+    "ember-router-rules"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.5"
