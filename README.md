@@ -1,5 +1,7 @@
 # Ember Rute Constraints
 
+[![Build Status](https://travis-ci.org/envoy/ember-route-constraints.png?branch=master)](https://travis-ci.org/envoy/ember-route-constraints)
+
 #### [Visit project page and demo](http://envoy.github.io/ember-route-constraints/)
 
 Route navigation constraints for Ember apps.
