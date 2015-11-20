@@ -4,7 +4,7 @@ import hasEmberVersion from 'ember-test-helpers/has-ember-version';
 
 import { test, module } from 'qunit';
 
-var application, t, defaultHandler;
+var application, t;
 
 Ember.run(function(){
   var options = {

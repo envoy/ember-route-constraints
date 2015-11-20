@@ -1,9 +1,10 @@
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
+import Ember from 'ember';
 
 let application, currentUser;
 moduleForAcceptance('Acceptance | Constraints', {
-  beforeEach(assert) {
+  beforeEach() {
     application = this.application;
     currentUser = application.__container__.lookup('service:current-user');
   }
