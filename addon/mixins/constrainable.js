@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import runConstraintRedirect from '../helpers/run-constraint-redirect';
 
 const { service } = Ember.inject;
+
 
 /**
   __This mixin is used to run constraints checks again a given route
@@ -33,11 +35,9 @@ export default Ember.Mixin.create({
     @public
   */
   beforeModel(transition) {
-    var constraint = this.get('constraints').constraintFor(this.routeName);
-    if (constraint && !constraint.check.run(this)) {
-      transition.abort();
-
-      this.transitionTo(constraint.redirectTo);
+    let constraint = this.get('constraints').constraintFor(this.routeName);
+    if (constraint && !constraint.check.run(this, transition)) {
+      runConstraintRedirect(this, constraint, transition);
     } else {
       return this._super(...arguments);
     }

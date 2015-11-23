@@ -3,7 +3,7 @@ export default class Check {
     this.fun = check;
   }
 
-  run(context) {
-    return this.fun.apply(context);
+  run(context, transition) {
+    return this.fun.apply(context, transition);
   }
 }

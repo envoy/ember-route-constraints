@@ -30,16 +30,14 @@ export default function() {
   this.transition(
     this.toRoute(/^royal-families/),
     this.check(function() {
-
       let canNavigate = this.get('currentUser.isTargaryen')  || this.
             get('currentUser.isLannister');
 
-      if(!canNavigate) {
-        this.get('notify').alert('Not today!');
-      }
-
       return canNavigate;
     }),
-    this.redirectTo('demo')
+    this.redirectTo(function() {
+      this.get('notify').alert('Not today!');
+      this.transitionTo('demo');
+    })
   );
 }
