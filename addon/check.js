@@ -4,6 +4,6 @@ export default class Check {
   }
 
   run(context, transition) {
-    return this.fun.apply(context, transition);
+    return this.fun.apply(context, [transition]);
   }
 }
