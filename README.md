@@ -12,7 +12,7 @@ conditions. A common approach to solve this issue is to have a
 visit the route.
 
 
-```
+```javascript
 beforeModel() {
   if (!this.get('currenUser.isAdmin')) {
     this.transitionTo('index');
@@ -31,7 +31,7 @@ different route.
 Create a file in `app/route-constraints.js` like:
 
 
-```
+```javascript
 // app/route-constraints.js
 
 export default function() {
@@ -55,7 +55,7 @@ export default function() {
 
 And then add the `ConstrainableMixin` to the routes you want to constraint.
 
-```
+```javascript
 //app/admin/route.js
 
 import Constrainable from 'ember-route-constraints/mixins/constrainable';
