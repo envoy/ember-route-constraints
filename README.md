@@ -1,6 +1,6 @@
 # Ember Rute Constraints
 
-[![Build Status](https://travis-ci.org/envoy/ember-route-constraints.png?branch=master)](https://travis-ci.org/envoy/ember-route-constraints)
+![Download count all time](https://img.shields.io/npm/dt/ember-route-constraints.svg) [![Build Status](https://travis-ci.org/envoy/ember-route-constraints.png?branch=master)](https://travis-ci.org/envoy/ember-route-constraints) [![npm version](https://badge.fury.io/js/ember-route-constraints.svg)](http://badge.fury.io/js/ember-route-constraints) [![Ember Observer Score](http://emberobserver.com/badges/ember-route-constraints.svg)](http://emberobserver.com/addons/ember-route-constraints)
 
 #### [Visit project page and demo](http://envoy.github.io/ember-route-constraints/)
 
