@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { isArray, A } from '@ember/array';
 
 /**
  * Based on Edward Faulkner <ef@alum.mit.edu> work on liquid-fire -
@@ -35,14 +36,14 @@ export var ANY = '__route_constraints_ANY__';
 export function constraintKeys(matcher) {
   if (typeof matcher === 'undefined' || matcher === null) {
     matcher = [ EMPTY ];
-  } else if (!Ember.isArray(matcher)) {
+  } else if (!isArray(matcher)) {
     matcher = [matcher];
   }
-  return Ember.A(matcher).map((elt) => {
+  return A(matcher).map((elt) => {
     if (typeof elt === 'string') {
       return elt;
     } else {
-      return Ember.guidFor(elt);
+      return guidFor(elt);
     }
   });
 }

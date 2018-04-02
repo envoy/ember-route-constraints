@@ -1,6 +1,6 @@
+import { run } from '@ember/runloop';
 import { test } from 'qunit';
 import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
-import Ember from 'ember';
 
 let application, currentUser;
 moduleForAcceptance('Acceptance | Constraints', {
@@ -35,7 +35,7 @@ test('Navigating between routes', function(assert) {
   andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'redirects to demo page');
 
-    Ember.run(() => {
+    run(() => {
       currentUser.set('house', 'Lannister');
     });
   });
@@ -57,7 +57,7 @@ test('Navigating between routes', function(assert) {
   andThen(function() {
     assert.equal(currentRouteName(), 'royal-families', 'goes to royal families');
 
-    Ember.run(() => {
+    run(() => {
       currentUser.set('house', 'Targaryen');
     });
   });

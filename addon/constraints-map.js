@@ -1,11 +1,11 @@
+import Service from '@ember/service';
 import DSL from "./dsl";
-import Ember from "ember";
 import Constraints from "./constraints";
 
 // Based on Edward Faulkner <ef@alum.mit.edu> work on liquid-fire -
 // https://github.com/ef4/liquid-fire/blob/7935d4f/addon/transition-map.js
 
-var ConstraintsMap = Ember.Service.extend({
+var ConstraintsMap = Service.extend({
   init: function() {
     this.constraints = new Constraints();
   },

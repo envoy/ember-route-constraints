@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { equal } from '@ember/object/computed';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
+export default Service.extend({
   house: 'Stark',
-  isLannister: Ember.computed.equal('house', 'Lannister'),
-  isTargaryen: Ember.computed.equal('house', 'Targaryen')
+  isLannister: equal('house', 'Lannister'),
+  isTargaryen: equal('house', 'Targaryen')
 });

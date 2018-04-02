@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { run } from '@ember/runloop';
 import Application from '../../../app';
 import hasEmberVersion from 'ember-test-helpers/has-ember-version';
 
@@ -6,7 +6,7 @@ import { test, module } from 'qunit';
 
 var application, t;
 
-Ember.run(function(){
+run(function(){
   var options = {
     autoboot: false
   };

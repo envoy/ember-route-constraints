@@ -1,7 +1,6 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { inject as service } from '@ember/service';
 import runConstraintRedirect from '../helpers/run-constraint-redirect';
-
-const { service } = Ember.inject;
 
 
 /**
@@ -17,7 +16,7 @@ const { service } = Ember.inject;
   @class ConstrainableMixin
   @extends Ember.Mixin
 */
-export default Ember.Mixin.create({
+export default Mixin.create({
   /**
     The constraints service.
 

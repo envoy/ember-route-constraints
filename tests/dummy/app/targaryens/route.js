@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import Constrainable from 'ember-route-constraints/mixins/constrainable';
 
 
-export default Ember.Route.extend(Constrainable, {
+export default Route.extend(Constrainable, {
 });

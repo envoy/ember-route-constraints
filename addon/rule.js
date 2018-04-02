@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { A } from '@ember/array';
 import Check from './check';
 import RouteName from './route-name';
 
@@ -19,7 +19,7 @@ import RouteName from './route-name';
  */
 export default class Rule {
   constructor() {
-    this.constraints = Ember.A();
+    this.constraints = A();
     this.toRoute = null;
     this.check = null;
     this.redirectTo = null;
