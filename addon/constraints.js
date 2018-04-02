@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* globals console */
 
 import { A } from '@ember/array';
@@ -23,7 +24,7 @@ export default class Constraints {
   }
 
   addHalfRule(rule) {
-    rule.constraints.forEach((constraint) => {
+    rule.constraints.forEach(constraint => {
       this.addConstraint(rule, constraint);
     });
   }
@@ -32,7 +33,7 @@ export default class Constraints {
     var context = this.targets;
 
     if (constraint.keys) {
-      constraint.keys.forEach((key) => {
+      constraint.keys.forEach(key => {
         this.addKey(context, key, rule);
       });
     } else {
@@ -49,14 +50,14 @@ export default class Constraints {
 
   bestMatch(conditions) {
     if (this.debug) {
-      console.log("[route-constraints] Checking constraints for", conditions);
+      console.log('[route-constraints] Checking constraints for', conditions);
     }
 
     var rules = this.match(conditions);
     var best = highestPriority(rules);
 
     if (rules.length > 1 && this.debug) {
-      rules.forEach((rule) => {
+      rules.forEach(rule => {
         if (rule !== best && rule.debug) {
           console.log(`${describeRule(rule)} matched, but it was superceded by another rule`);
         }
@@ -104,9 +105,9 @@ export default class Constraints {
   }
 
   logDebugRules(matched, context, target, value) {
-    A(Object.keys(context)).forEach((setKey) => {
+    A(Object.keys(context)).forEach(setKey => {
       var set = context[setKey];
-      A(Object.keys(set)).forEach((ruleKey) => {
+      A(Object.keys(set)).forEach(ruleKey => {
         var rule = set[ruleKey];
         if (rule.debug && !matched[guidFor(rule)]) {
           console.log(`${describeRule(rule)} rejected because value was`, ...value);
@@ -144,9 +145,12 @@ export default class Constraints {
     }
     if (rule.debug) {
       if (constraint.target === 'parentElement') {
-        values = values.map((v)=>v[0]);
+        values = values.map(v => v[0]);
       }
-      console.log(`${describeRule(rule)} rejected because of a constraint on ${constraint.target}. ${constraint.target} was`, ...values);
+      console.log(
+        `${describeRule(rule)} rejected because of a constraint on ${constraint.target}. ${constraint.target} was`,
+        ...values
+      );
     }
   }
 }
@@ -211,3 +215,4 @@ function highestPriority(rules) {
   }
   return best;
 }
+/* eslint-enable camelcase */

@@ -1,82 +1,59 @@
+import { module, test } from 'qunit';
+import { visit, currentRouteName } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 import { run } from '@ember/runloop';
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
 
-let application, currentUser;
-moduleForAcceptance('Acceptance | Constraints', {
-  beforeEach() {
-    application = this.application;
-    currentUser = application.__container__.lookup('service:current-user');
-  }
-});
+let currentUser;
+module('Acceptance | Constraints', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('Navigating between routes', function(assert) {
-  assert.expect(10);
-  visit('/');
+  hooks.beforeEach(function() {
+    currentUser = this.owner.lookup('service:current-user');
+  });
+  test('Navigating between routes', async function(assert) {
+    assert.expect(10);
+    await visit('/');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'index', 'navigates to index');
-  });
 
-  visit('royal-families');
+    await visit('royal-families');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'goes to demo page');
-  });
 
-  visit('targaryens');
+    await visit('targaryens');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'goes to demo page');
-  });
 
-  visit('lannisters');
+    await visit('lannisters');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'redirects to demo page');
 
-    run(() => {
-      currentUser.set('house', 'Lannister');
-    });
-  });
+    run(() => currentUser.set('house', 'Lannister'));
 
-  visit('lannisters');
+    await visit('lannisters');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'lannisters', 'goes to lannisters page');
-  });
 
-  visit('targaryens');
+    await visit('targaryens');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'redirects to demo');
-  });
 
-  visit('royal-families');
+    await visit('royal-families');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'royal-families', 'goes to royal families');
 
-    run(() => {
-      currentUser.set('house', 'Targaryen');
-    });
-  });
+    run(() => currentUser.set('house', 'Targaryen'));
 
-  visit('targaryens');
+    await visit('targaryens');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'targaryens', 'goes to targaryens');
-  });
 
-  visit('lannisters');
+    await visit('lannisters');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'demo', 'goes to demo');
-  });
 
-  visit('royal-families');
+    await visit('royal-families');
 
-  andThen(function() {
     assert.equal(currentRouteName(), 'royal-families', 'goes to royal families');
   });
 });

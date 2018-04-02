@@ -19,11 +19,15 @@ import { isArray, A } from '@ember/array';
 export default class Constraint {
   constructor(matcher) {
     if (matcher instanceof RegExp) {
-      this.predicate = function(value) { return matcher.test(value); };
+      this.predicate = function(value) {
+        return matcher.test(value);
+      };
     } else if (typeof matcher === 'function') {
       this.predicate = matcher;
     } else if (typeof matcher === 'boolean') {
-      this.predicate = function(value) { return matcher ? value : !value; };
+      this.predicate = function(value) {
+        return matcher ? value : !value;
+      };
     } else {
       this.keys = constraintKeys(matcher);
     }
@@ -35,11 +39,11 @@ export var ANY = '__route_constraints_ANY__';
 
 export function constraintKeys(matcher) {
   if (typeof matcher === 'undefined' || matcher === null) {
-    matcher = [ EMPTY ];
+    matcher = [EMPTY];
   } else if (!isArray(matcher)) {
     matcher = [matcher];
   }
-  return A(matcher).map((elt) => {
+  return A(matcher).map(elt => {
     if (typeof elt === 'string') {
       return elt;
     } else {

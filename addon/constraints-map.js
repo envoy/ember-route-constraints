@@ -1,12 +1,13 @@
 import Service from '@ember/service';
-import DSL from "./dsl";
-import Constraints from "./constraints";
+import DSL from './dsl';
+import Constraints from './constraints';
 
 // Based on Edward Faulkner <ef@alum.mit.edu> work on liquid-fire -
 // https://github.com/ef4/liquid-fire/blob/7935d4f/addon/transition-map.js
 
 var ConstraintsMap = Service.extend({
   init: function() {
+    this._super(...arguments);
     this.constraints = new Constraints();
   },
 
@@ -14,9 +15,8 @@ var ConstraintsMap = Service.extend({
     return this.constraints.bestMatch(conditions);
   },
 
-
   map: function(handler) {
-    if (handler){
+    if (handler) {
       handler.apply(new DSL(this));
     }
     return this;

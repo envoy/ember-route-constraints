@@ -1,20 +1,19 @@
-import Rule from "./rule";
-import Constraint from "./constraint";
-import Check from "./check";
-import RouteName from "./route-name";
+import Rule from './rule';
+import Constraint from './constraint';
+import Check from './check';
+import RouteName from './route-name';
 
 // Based on Edward Faulkner <ef@alum.mit.edu> work on liquid-fire -
 // https://github.com/ef4/liquid-fire/blob/7935d4f/addon/dsl.js
 
 export default class DSL {
-
   constructor(map) {
     this.map = map;
   }
 
   transition() {
     var rule = new Rule();
-    var parts = Array.prototype.slice.apply(arguments).reduce(function(a,b){
+    var parts = Array.prototype.slice.apply(arguments).reduce(function(a, b) {
       return a.concat(b);
     }, []);
 
@@ -26,9 +25,7 @@ export default class DSL {
   }
 
   toRoute(routeName) {
-    return [
-      new Constraint(routeName)
-    ];
+    return [new Constraint(routeName)];
   }
 
   check(fun) {

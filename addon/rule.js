@@ -49,7 +49,7 @@ export default class Rule {
   validate() {
     let required = ['check'];
 
-    required.forEach( (prop) => {
+    required.forEach(prop => {
       if (!this[prop]) {
         throw new Error(`Every transition rule must include a "${prop}" statement`);
       }

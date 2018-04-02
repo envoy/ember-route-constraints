@@ -2,7 +2,6 @@ import Mixin from '@ember/object/mixin';
 import { inject as service } from '@ember/service';
 import runConstraintRedirect from '../helpers/run-constraint-redirect';
 
-
 /**
   __This mixin is used to run constraints checks again a given route
 
