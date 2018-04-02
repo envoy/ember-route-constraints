@@ -1,4 +1,3 @@
-import ConstraintsMap from "./constraints-map";
-
+import ConstraintsMap from './constraints-map';
 
 export { ConstraintsMap };

@@ -11,7 +11,6 @@ conditions. A common approach to solve this issue is to have a
 `beforeModel` hook and then transtion from there if the user can't
 visit the route.
 
-
 ```javascript
 beforeModel() {
   if (!this.get('currenUser.isAdmin')) {
@@ -29,7 +28,6 @@ given conditions are not met, then you can redirect users to a
 different route.
 
 Create a file in `app/route-constraints.js` like:
-
 
 ```javascript
 // app/route-constraints.js
@@ -60,8 +58,7 @@ And then add the `ConstrainableMixin` to the routes you want to constraint.
 
 import Constrainable from 'ember-route-constraints/mixins/constrainable';
 
-export default Ember.Route.extend(Constrainable, {
-});
+export default Ember.Route.extend(Constrainable, {});
 ```
 
 ## Installation
@@ -80,14 +77,12 @@ For Ember CLI < `0.2.3`:
 ember install:addon ember install ember-route-constraints
 ```
 
-
 ## Development
 
 ## Installation
 
 * `git clone` this repository
-* `npm install`
-* `bower install`
+* `yarn install`
 
 ## Running
 
