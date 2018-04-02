@@ -11,7 +11,6 @@ Router.map(function() {
   this.route('royal-families');
   this.route('targaryens');
   this.route('install');
-  this.route('constraints');
   this.route('demo');
 });
 
