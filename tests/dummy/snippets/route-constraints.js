@@ -24,8 +24,7 @@ export default function() {
   this.transition(
     this.toRoute(/^royal-families/),
     this.check(function() {
-      let canNavigate = this.get('currentUser.isTargaryen')  || this.
-            get('currentUser.isLannister');
+      let canNavigate = this.get('currentUser.isTargaryen') || this.get('currentUser.isLannister');
 
       return canNavigate;
     }),
