@@ -56,9 +56,10 @@ And then add the `ConstrainableMixin` to the routes you want to constraint.
 ```javascript
 //app/admin/route.js
 
+import Route from '@ember/routing/route';
 import Constrainable from 'ember-route-constraints/mixins/constrainable';
 
-export default Ember.Route.extend(Constrainable, {});
+export default Route.extend(Constrainable, {});
 ```
 
 ## Installation
