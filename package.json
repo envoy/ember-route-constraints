@@ -1,6 +1,6 @@
 {
   "name": "ember-route-constraints",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Route navigation constraints for Ember apps.",
   "keywords": [
     "ember-addon",
