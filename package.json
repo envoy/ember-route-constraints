@@ -1,8 +1,15 @@
 {
   "name": "ember-route-constraints",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Route navigation constraints for Ember apps.",
-  "keywords": ["ember-addon", "ember-authorization", "authorization", "ember-router-rules", "ember-can", "can-can"],
+  "keywords": [
+    "ember-addon",
+    "ember-authorization",
+    "authorization",
+    "ember-router-rules",
+    "ember-can",
+    "can-can"
+  ],
   "license": "MIT",
   "author": "Adolfo Builes <builes.adolfo@gmail.com>",
   "directories": {
