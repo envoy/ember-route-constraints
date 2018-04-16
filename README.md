@@ -13,7 +13,7 @@ visit the route.
 
 ```javascript
 beforeModel() {
-  if (!this.get('currenUser.isAdmin')) {
+  if (!this.get('currentUser.isAdmin')) {
     this.transitionTo('index');
   }
 }
