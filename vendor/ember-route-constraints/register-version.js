@@ -1,1 +1,1 @@
-Ember.libraries.register('Ember Rute Constraints', '0.0.7');
+Ember.libraries.register('Ember Route Constraints', '0.0.8');
